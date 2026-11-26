@@ -1,0 +1,21 @@
+-- 1. Create and select the Database
+CREATE DATABASE StudentRecords;
+USE StudentRecords;
+
+-- 2. Create a Table with specific Fields (columns) and data types
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    FullName VARCHAR(50),
+    Course VARCHAR(30),
+    YearLevel INT
+);
+
+-- 3. Insert Values (records/rows) into the Table
+INSERT INTO Students (StudentID, FullName, Course, YearLevel)
+VALUES 
+    (101, 'Maria Santos', 'BSIE', 4),
+    (102, 'Juan Dela Cruz', 'BSCE', 3),
+    (103, 'Ana Reyes', 'BSIE', 4);
+
+-- 4. Retrieve and observe the stored data
+SELECT * FROM Students;
