@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<form action="welcome.php" method="post">
+Name: <input type="text" name="name"><br>
+E-mail: <input type="text" name="email"><br>
+<input type="submit">
+</form>
+
+</body>
+</html>
+```[cite: 2]
+
+### 2. `welcome.php`
+```html
+<html>
+<body>
+
+Welcome <?php echo $_GET["name"]; ?><br>
+Your email address is: <?php echo $_GET["email"]; ?>
+
+</body>
+</html>
+```[cite: 3]
+
+---
+
+### Important Fix Before Uploading
+In your screenshots, `exer4.htm` uses `method="post"`[cite: 2], while `welcome.php` uses `$_GET[...]`[cite: 3]. Because the methods don't match, `welcome.php` will display blank values when you submit the form.
+
+To fix this, either:
+* **Option A (Recommended):** Change `$_GET` to `$_POST` in `welcome.php`:
+  ```php
+  Welcome <?php echo $_POST["name"]; ?><br>
+  Your email address is: <?php echo $_POST["email"]; ?>
